@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Quadrante</title>
+
+    <meta charset="UTF-8">
+
+</head>
+
+<body class="bg-black">
+
+    <style>
+        div {
+            border-color: white;
+        }
+    </style>
+
+    <div id="container"
+        class="fixed bg-black w-[100vw] h-[100vh] flex flex-wrap justify-center content-center transition-all ease-in-out duration-[2s] -z-[10]">
+
+        <div id="title" class="absolute text-white text-[30px] font-serif">
+            <h1>La divina commedia</h1>
+        </div>
+
+        <div id="redTerrain"
+            class="absolute bg-repeat-x flex w-[100vw] h-[1000px] top-[9999px] bg-red-900 z-[-1] transition-all ease-in-out duration-[2.3s]">
+        </div>
+        <div id="redMountain1"
+            class="absolute bg-contain bg-repeat-x w-[100vw] h-[600px] top-[9999px] left-0 z-[-2] transition-all ease-in-out duration-[2.3s]"
+            style="background-image: url(Assests/RedMountainLayer1.png);">
+        </div>
+
+        <div id="redMountain2"
+            class="absolute bg-contain bg-repeat-x w-[100vw] h-[600px] top-[9999px] left-0 z-[-3] transition-all ease-in-out duration-[2.4s]"
+            style="background-image: url(Assests/RedMountainLayer2.png);">
+        </div>
+
+        <div id="cloud1"
+            class="absolute flex w-[500px] h-[260px] left-[-9999px] top-[60px] bg-cover bg-no-repeat z-[-1] transition-all ease-in-out duration-[2.3s]"
+            style="background-image: url(Assests/Cloud1.png);">
+        </div>
+
+        <div id="cloud2"
+            class="absolute flex w-[500px] h-[315px] left-[9999px] top-[70px] bg-cover bg-no-repeat z-[-1] transition-all ease-in-out duration-[2.3s]"
+            style="background-image: url(Assests/Cloud2.png);">
+        </div>
+
+        <div id="sun"
+            class="absolute flex w-[315px] h-[315px] left-auto top-[-9999px] bg-cover bg-no-repeat z-[-1] transition-all ease-in-out duration-[2.3s]"
+            style="background-image: url(Assests/Sun.png);">
+        </div>
+
+        <div id="cloudTerrain"
+            class="absolute bg-repeat-x flex w-[100vw] h-[1000px] top-[9999px] z-[-1] transition-all ease-in-out duration-[2.3s]"
+            style="background-image: url(Assests/Cloud3.png);">
+        </div>
+
+        <div id="tower1" style="background-image: url('Assests/Tower1.png');"
+            class="absolute top-[9999px] left-auto w-[820px] h-[230px] bg-cover z-[-1] transition-all ease-in-out duration-[2.4s]">
+        </div>
+
+        <div id="tower2" style="background-image: url('Assests/Tower1.png');"
+            class="absolute top-[9999px] left-auto w-[720px] h-[230px] bg-cover z-[-2] brightness-[0.5] transition-all ease-in-out duration-[2.3s]">
+        </div>
+
+        <div id="tower3" style="background-image: url('Assests/Tower1.png');"
+            class="absolute top-[9999px] left-auto w-[620px] h-[230px] bg-cover z-[-3] brightness-[0.6] transition-all ease-in-out duration-[2.2s]">
+        </div>
+
+        <div id="tower4" style="background-image: url('Assests/Tower1.png');"
+            class="absolute top-[9999px] left-auto w-[520px] h-[230px] bg-cover z-[-4] brightness-[0.7] transition-all ease-in-out duration-[2.1s]">
+        </div>
+
+        <div id="tower5" style="background-image: url('Assests/Tower1.png');"
+            class="absolute top-[9999px] left-auto w-[420px] h-[230px] bg-cover z-[-5] brightness-[0.8] transition-all ease-in-out duration-[2s]">
+        </div>
+
+        <div id="purgatoryTerrain"
+            class="absolute top-[9999px] left-auto w-[100%] h-[900px] bg-yellow-100 z-[-6] transition-all ease-in-out duration-[2.1s]">
+        </div>
+
+        <div
+            class="flex flex-wrap w-[300px] h-[600px] rounded-md border border-2 justify-center content-center text-center transition-colors ease-in-out duration-[2s]">
+            <ul>
+                <li class="mb-10"><button
+                        class="w-[230px] h-[40px] rounded-full bg-blue-400 text-white text-xl font-bold border-2 border-black transition-all ease-in-out duration-[500ms] hover:cursor-pointer hover:bg-white hover:text-blue-400 focus:bg-white focus:text-blue-400 focus:w-[250px] focus:h-[45px]"
+                        onclick="paradiseSettings()">Paradiso</button>
+                </li>
+                <li class="mb-10"><button
+                        class="w-[230px] h-[40px] rounded-full bg-green-900 text-yellow-100 text-xl font-bold border-2 border-black transition-all ease-in-out duration-[500ms] hover:cursor-pointer hover:bg-yellow-100 hover:text-green-900 focus:bg-yellow-100 focus:text-green-900 focus:w-[250px] focus:h-[45px]"
+                        onclick="purgatorySettings()">Purgatorio</button>
+                </li>
+                <li><button
+                        class=" w-[230px] h-[40px] rounded-full bg-red-900 font-serif text-yellow-500 text-xl border-2 border-black transition-all ease-in-out duration-[500ms] hover:cursor-pointer hover:bg-yellow-500 hover:text-red-900 focus:bg-yellow-500 focus:text-red-900 focus:w-[250px] focus:h-[45px]"
+                        w onclick="hellSettings()">Inferno</button>
+                </li>
+            </ul>
+        </div>
+        <div id="descriptionField"
+            class="flex flex-wrap w-[620px] h-[600px] bg-gray-200 justify-center rounded-md border border-2 transition-colors ease-in-out duration-[300ms] overflow-auto">
+
+        </div>
+    </div>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="descriptions.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
